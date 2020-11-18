@@ -22,7 +22,7 @@ const encify = function(enc = 'base64', type = 'json') {
         httpQuery: {
             json: {
                 serialize(o) {
-                    return Object.keys(o).map(key => `${key}=${o[key]}`).join('&')
+                    return Object.keys(o).map(key => `${key}=${encodeURIComponent(o[key])}`).join('&');
                 },
                 deserialize(str) {
                     const o = {};
