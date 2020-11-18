@@ -7,7 +7,7 @@ const encify = function(enc = 'base64', type = 'json') {
                 },
 
                 decode(str) {
-                    return JSON.parse(atob(decodeURIComponent(escape(str))));
+                    return JSON.parse(atob(decodeURIComponent(escape(str.replace(/\=/g, '')))));
                 }
             },
             string: {
