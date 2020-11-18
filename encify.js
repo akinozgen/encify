@@ -37,3 +37,5 @@ const encify = function(enc = 'base64', type = 'json') {
     };
     return encoders[enc][type];
 };
+
+export default encify;
